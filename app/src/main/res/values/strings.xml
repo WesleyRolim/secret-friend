@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FriendSecret</string>
+    <string name="telefone">Telefone</string>
+    <string name="nome">Nome</string>
+    <string name="digite_o_nome">Digite o nome</string>
+    <string name="_55">+55</string>
+    <string name="_9_9999_9999">9-9999-9999</string>
+    <string name="_11">11</string>
+    <string name="cadastrar">ADD</string>
+    <string name="jogar">PLAY</string>
+    <string name="limpar">LIMPAR</string>
+    <string name="newButton">NEW</string>
+</resources>
