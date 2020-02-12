@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText codArea;
     private EditText ddd;
     private EditText telefone;
+    private EditText sugestao;
     private Button adicionar;
     private Button limpar;
     private Button sortear;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         codArea = (EditText) findViewById(R.id.codAreaText);
         ddd = (EditText) findViewById(R.id.dddText);
         telefone = (EditText) findViewById(R.id.telefoneText);
+        sugestao = (EditText) findViewById(R.id.sugestaoText);
         adicionar = (Button) findViewById(R.id.addButton);
         limpar = (Button) findViewById(R.id.limparButton);
         sortear = (Button) findViewById(R.id.jogarButton);
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     telefoneSemFormatacao = telefoneSemFormatacao.replace("-", "");
 
                     //Salvando os dados no array;
-                    Participantes dado = new Participantes(nome.getText().toString(), telefoneSemFormatacao);
+                    Participantes dado = new Participantes(nome.getText().toString(), telefoneSemFormatacao, sugestao.getText().toString());
                     participantes.add(dado);
 
                     limparCampos();
@@ -117,9 +119,11 @@ public class MainActivity extends AppCompatActivity {
                     for (int i = 0 ; i < numero.size() ; i ++){
                         Log.i("AMIGO", participantes.get(i).getNome() +" seu amigo é " +
                                 participantes.get(numero.get(i)).getNome() +
-                                " numero dele é: "+ participantes.get(numero.get(i)).getTelefone());
+                                " numero dele é: "+ participantes.get(numero.get(i)).getTelefone() +
+                                " sugestão de presente dele é: " + participantes.get(numero.get(i)).getSugestao());
                         boolean smsEnviado = enviarSMS(participantes.get(numero.get(i)).getTelefone(),
-                                "Seu amigo secreto é: "+ participantes.get(i).getNome());
+                                "Seu amigo secreto é: "+ participantes.get(i).getNome() +
+                                        " e a sugestão de presente dele é: " + participantes.get(numero.get(i)).getSugestao());
                     }
                 }else {
                     Toast.makeText(MainActivity.this, "Cadastrar mais participantes", Toast.LENGTH_LONG).show();
@@ -181,9 +185,11 @@ public class MainActivity extends AppCompatActivity {
         codArea.setText("");
         ddd.setText("");
         telefone.setText("");
+        sugestao.setText("");
     }
 
     private boolean camposVazios(){
+        // O campo presente não é obrigatório
         if (nome.getText().toString().isEmpty() || codArea.getText().toString().isEmpty() || ddd.getText().toString().isEmpty()|| telefone.getText().toString().isEmpty()){
             Toast.makeText(MainActivity.this, "Entre com todo os campos", Toast.LENGTH_LONG).show();
             return false;

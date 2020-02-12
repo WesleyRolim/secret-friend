@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Text"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
@@ -112,13 +113,10 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/cadastrar"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telefoneText" />
+        app:layout_constraintTop_toBottomOf="@+id/sugestaoText" />
 
     <Button
         android:id="@+id/jogarButton"
@@ -127,13 +125,10 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/jogar"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/limparButton"
-        app:layout_constraintTop_toBottomOf="@+id/telefoneText" />
+        app:layout_constraintTop_toBottomOf="@+id/sugestaoText" />
 
     <Button
         android:id="@+id/limparButton"
@@ -142,13 +137,10 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/limpar"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/addButton"
-        app:layout_constraintTop_toBottomOf="@+id/telefoneText" />
+        app:layout_constraintTop_toBottomOf="@+id/sugestaoText" />
 
     <Button
         android:id="@+id/newButton"
@@ -157,9 +149,29 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
         android:text="@string/newButton"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/jogarButton"
-        app:layout_constraintTop_toBottomOf="@+id/telefoneText" />
+        app:layout_constraintTop_toBottomOf="@+id/sugestaoText" />
+
+    <EditText
+        android:id="@+id/sugestaoText"
+        android:layout_width="369dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:ems="10"
+        android:hint="@string/sugestao_de_presente"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefoneText"
+        android:autofillHints="" tools:targetApi="o"/>
 
 </android.support.constraint.ConstraintLayout>

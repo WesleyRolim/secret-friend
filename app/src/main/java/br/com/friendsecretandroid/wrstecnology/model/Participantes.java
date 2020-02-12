@@ -3,15 +3,18 @@ package br.com.friendsecretandroid.wrstecnology.model;
 public class Participantes {
     private String nome;
     private String telefone;
+    private String sugestao;
 
-    public Participantes (String nome, String telefone){
+    public Participantes (String nome, String telefone, String sugestao){
         this.nome = nome;
         this.telefone = telefone;
+        this.sugestao = sugestao;
     }
 
     public Participantes (){
         this.nome = "";
         this.telefone = "";
+        this.sugestao = "";
     }
 
     public String getNome() {
@@ -28,5 +31,13 @@ public class Participantes {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getSugestao() {
+        return sugestao;
+    }
+
+    public void setSugestao(String sugestao) {
+        this.sugestao = sugestao;
     }
 }
